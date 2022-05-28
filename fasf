@@ -1,0 +1,54 @@
+# def solution(num):
+#     #사용할 변수 만들기
+#     input_num_original = num # 원래숫자
+#     input_num = input_num_original # 계산에 사용할 숫자(복제)
+#     sum_num = 0 # 각 자리수를 더한 숫자를 저장할 변수
+#
+#     # 원리에 따라 계산
+#     x = 133
+#     print(x % 10)
+#     print(x // 10)
+#
+#     # 원리에 따라 계산
+#     while input_num != 0:
+#         sum_num += input_num % 10
+#         input_num = input_num // 10
+#
+#     if input_num_original % sum_num == 0:
+#         return True
+#     else:
+#         return False
+#
+#
+# print(solution(int(input()))) #함수 실행(호츨)
+
+
+
+
+# def solution(x):
+#     num = 0
+#     for i in str(x):
+#         num += int(i)
+#     return x % num == 0
+
+
+
+# def solution(x):
+#     num = 0
+#     for i in str(x):
+#         print(i)
+#         num += int(i)
+#     return x % num == 0
+#
+# print(solution(11))
+
+def solution(s,n):#s는 문자열,n은 숫자
+    answer = ""
+    for i in s:
+        if i.isupper():#대문자일 때
+            answer += (chr((ord(i)- ord('A') + n) % 26 + ord('A')))
+        elif i.islower():#소문자일 때
+            answer += chr((ord(i)- ord('a') + n) % 26 + ord('a'))
+        elif i == ' ':
+            answer += i
+    return answer
